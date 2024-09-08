@@ -1,0 +1,32 @@
+<template>
+   
+    <lightning-layout horizontal-align="center" 
+    class="slds-box slds-theme_default">
+        <lightning-layout-item padding="around-small" size="4">
+            <c-custom-lookup api-name="Account" 
+            object-label="Account" 
+            icon-name="standard:account"
+            onselectedrec={selectedRecordHandler}></c-custom-lookup>
+            <div class="custom-box">1</div>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="4">
+          
+            <template lwc:if={industryPicklist.data}>
+                <lightning-combobox label="Industry" value="Industry" placeholder="Select Industry"
+                    options={industryPicklist.data.values} onchange={handleChange}>
+                </lightning-combobox>
+            </template>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="4">
+            <lightning-button
+            variant="brand"
+            disabled={isButtonDisabled}
+            label="Create new Contact"
+            onclick={addNewContact}
+            ></lightning-button>
+        </lightning-layout-item>
+
+        </lightning-layout>
+</template>

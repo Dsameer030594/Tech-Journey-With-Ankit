@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="getPicklistValue by RecordType Demo ">
+      
+        <template lwc:if={accountInfoPickList.data}>
+      <lightning-combobox
+            name="Rating"
+            label="Rating"
+            value={value}
+            placeholder="Select Rating"
+            options={accountInfoPickList.data.pickListFieldValues.rating.values}
+            class="slds-var-m-around_small">
+        </lightning-combobox>
+       
+        <lightning-combobox
+        name="Industry"
+        label="Industry"
+        value={value}
+        placeholder="Select Industry"
+        options={accountInfoPickList.data.pickListFieldValues.Industry.values}
+        class="slds-var-m-around_small">
+    </lightning-combobox>
+    
+    <lightning-combobox
+        name="Priority"
+        label="Customer Priority"
+        value={value}
+        placeholder="Select Priority"
+        options={accountInfoPickList.data.pickListFieldValues.Priority.values}
+        class="slds-var-m-around_small">
+    </lightning-combobox>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,13 @@
+<template>
+    <p> I am Parent Component</p>
+    <div onfire={fireChildDivHandler}>
+        <c-child-composition onfire={firechildhandler}></c-child-composition>
+    </div>
+</template>
+
+
+
+<!---Bubbles : false, composed : false == firechildhandler-->
+<!---bubbles : true, composed : false == firechildhandler, fireChildDivHandler-->
+<!---bubbles : false, composed : true == This is not supported in LWC (SAME as 1st one)-->
+<!---bubbles : true, composed : true == firechildhandler, fireChildDivHandler, fireChildHandler-->

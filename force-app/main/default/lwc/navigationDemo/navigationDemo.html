@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Navigation to Home Page">
+       <div class="slds-var-p-around_small">
+         <lightning-button 
+         label="Navigate to Home Page" 
+         varient="Success" 
+         onclick={navHomeClickHandler}
+         ></lightning-button>
+       </div>
+
+       <div class="slds-var-p-around_small">
+        <lightning-button 
+        label="Navigate to Account List view" 
+        varient="Success" 
+        onclick={navAccListViewClickHandler}
+        ></lightning-button>
+      </div>
+
+      <div class="slds-var-p-around_small">
+        <lightning-button 
+        label="Create New Account - no Default" 
+        varient="Success" 
+        onclick={createNewAccClickHandler}
+        ></lightning-button>
+      </div>
+
+      <div class="slds-var-p-around_small">
+        <lightning-button 
+        label="Create New Account - Default values ex Rating = Hot" 
+        varient="Success" 
+        onclick={createNewAccDefaultValClickHandler}
+        ></lightning-button>
+      </div>
+
+      <div class="slds-var-p-around_small">
+        <lightning-button 
+        label="Edit Account " 
+        varient="Success" 
+        onclick={editAccClickHandler}
+        ></lightning-button>
+      </div>
+
+    </lightning-card>
+</template>

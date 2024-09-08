@@ -1,0 +1,16 @@
+<template>
+  <lightning-card title="Custom Event Demo">
+    
+    <template lwc:if={displayMessage}>
+<p class="slds-var-p-around_small">
+  Welcome to Learn LWC - From Tech Journey with Ankit
+</p>
+
+    </template>
+    
+   <div class="slds-var-p-around_small"> 
+    <c-child-custom-event-demo ondisplaymsg={displayMessageHandler}></c-child-custom-event-demo>
+   </div>
+
+  </lightning-card>
+</template>

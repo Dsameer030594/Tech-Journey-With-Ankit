@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Get Records Demo">
+    <template lwc:if={outputs}>
+       <template for:each={outputs.results} for:item="output">
+          <p class="slds-var-p-around_small" 
+          key={output.result.id}> {output.result.fields.Name.value}</p>
+       </template>
+    </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-card  title="Tech Journey With Ankit">
+        <div class="slds-var-p-left_x-small">
+            <p>{greeting}</p>
+            <p>{Welcome}</p>
+        </div>
+
+        <div class="slds-var-p-left_x-small">
+            <!-- Brand variant: Identifies the primary action in a group of buttons -->
+            <lightning-button variant="brand" 
+            label="Change Text" 
+            title="Change Default Test" 
+            icon-name="standard:shipment" 
+            class="slds-var-m-left_x-small"
+            onclick={clickHandler}
+            ></lightning-button>
+        </div>
+    </lightning-card>
+</template>

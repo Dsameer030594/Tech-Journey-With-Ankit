@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Dynamic CSS" icon-name="custom:custom15">
+
+        <div class="slds-var-p-around_small">
+            <p class={pColor}>Welcome to learn LWC - From Tech Journey with Ankit</p>
+        </div>
+
+        <div class="slds-var-p-around_small">
+           <lightning-button 
+            variant="brand" 
+            label="Add CSS" 
+            onclick={addCSSHandler} 
+            class="slds-var-p-around_small">
+           </lightning-button>
+
+           <lightning-button 
+            variant="brand" 
+            label="Remove CSS" 
+            onclick={removeCSSHandler} 
+            class="slds-var-p-around_small">
+           </lightning-button>
+
+           <lightning-button 
+            variant="brand" 
+            label="Toggle CSS" 
+            onclick={toggleCSSHandler} 
+            class="slds-var-p-around_small">
+           </lightning-button>
+
+        </div>
+    </lightning-card>
+</template>

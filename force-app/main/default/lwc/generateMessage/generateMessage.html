@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Generate Full Name -- LWC (Child LWC to Parent Aura Communication)">
+        <div class="slds-var-p-around_small">
+            <lightning-input 
+            name="fname"
+            type="text" 
+            label="Enter First Name" 
+            placeholder="type first Name..."
+            onchange={changeHandler}
+            ></lightning-input>
+
+            <lightning-input 
+            name="lname"
+            type="text" 
+            label="Enter Last Name" 
+            placeholder="type Last Name..."
+            onchange={changeHandler}
+            ></lightning-input>
+        </div>
+
+        <div class="slds-var-p-around_small">
+            <lightning-button 
+            variant="brand" 
+            label="Generate Full Name" 
+            onclick={handleClick}
+            ></lightning-button>
+
+        </div>
+    </lightning-card>
+</template>

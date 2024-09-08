@@ -1,0 +1,33 @@
+<template>
+<lightning-card title="Contact Details Child to Parent Communication" icon-name="custom:custom14">
+
+<lightning-layout class="slds-var-m-around_small">
+
+<lightning-layout-item padding="around-small">
+    <template lwc:if={contacts.data}>
+    <template for:each={contacts.data} for:item="contact">
+        <c-contact-item key={contact.Id}
+            contact={contact}
+            onselection={selectionHandler}
+        ></c-contact-item>
+    </template>
+    </template>
+</lightning-layout-item>
+
+<lightning-layout-item padding="around-small">
+<template lwc:if={selectedContact}>
+<img src={selectedContact.PhotoUrl} />
+<p>{selectedContact.Name}</p>
+<p>{selectedContact.Title}</p>
+<p>
+    <lightning-formatted-phone value={selectedContact.Phone}></lightning-formatted-phone>
+</p>
+<p>
+    <lightning-formatted-email value={selectedContact.Email}></lightning-formatted-email>
+</p>
+</template>
+
+</lightning-layout-item>
+</lightning-layout>
+</lightning-card>
+</template>

@@ -1,0 +1,13 @@
+{
+
+  "orgName": "Tech Journey with Ankit-LWC Bootcamp",
+  "edition": "Developer",
+  "sourceOrg" : "00D5j00000DpE4v",
+  "hasSampleData": true,
+  "features": ["Communities"],
+  "settings": {
+    "communitiesSettings": {
+        "enableNetworksEnabled": true
+    }
+}
+}

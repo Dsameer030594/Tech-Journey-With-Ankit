@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Logged In User name" icon-name="custom:custom14">
+        <div class="slds-var-p-around_small">
+            <p class="slds-var-text-heading_medium">{name}</p>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Check Permission" icon-name="custom:custom14">
+        <div class="slds-var-p-around_small">
+            <template if:true={checkPermission}>
+                <p>You are authorized to view the message</p>
+            </template>
+            <template if:false={checkPermission}>
+                <p>You are not authorized to view the message</p>
+            </template>
+        </div>
+    </lightning-card>
+    <lightning-card title="Custom Labels" icon-name="custom:custom14">
+        <div class="slds-var-p-around_small">
+            <p class="slds-var-text-heading_medium">{label.greeting}</p>
+            <p class="slds-var-text-heading_medium">{label.platform}</p>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Third Party CSS" icon-name="custom:custom14">
+        <div class="slds-var-p-around_small">
+            <p class="slds-var-text-heading_medium animate__bounceOut animate__delay-4s">{name}</p>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Third Party JS Date format" icon-name="custom:custom14">
+        <div class="slds-var-p-around_small">
+            <p class="slds-var-text-heading_medium">{displayDate}</p>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Access Content Asset files" icon-name="custom:custom14">
+        <div class="slds-var-p-around_small">
+            <img src={contentTrailheadFile} />
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Create Account" icon-name="custom:custom14">
+        <div class="slds-var-p-around_small">
+            <lightning-combobox name="ParentAcc" label="Parent Account" placeholder="Select Parent Account"
+                options={parentoptions} onchange={handleChange} required="true"
+                message-when-value-missing="Please select Parent Account" class="validateme">
+            </lightning-combobox>
+
+            <lightning-input label="Account Name" type="text" placeholder="Enter Account Name" name="AccName"
+                required="true" message-when-value-missing="Enter Account Name" min-length="1" max-length="60"
+                message-when-too-short="Minimum length of Account Name is 1"
+                message-when-too-long="Maximum length of Account Name is 60" onchange={handleChange} class="validateme">
+            </lightning-input>
+
+            <lightning-input type="date" name="ExpDate" label="SLA Expiration Date" onchange={handleChange}>
+            </lightning-input>
+
+            <template if:true={slapicklist.data}>
+                <lightning-radio-group type="button" name="SlaType" label="SLA Type" options={slapicklist.data.values}
+                    onchange={handleChange}>
+                </lightning-radio-group>
+            </template>
+
+            <lightning-slider label="Number of Locations" step="1" min="0" max="50" value={salnoofLocations}
+                onchange={handleChange} name="NoOfLocations">
+            </lightning-slider>
+
+            <lightning-input-rich-text name="Description" label="Description" disabled-categories="FORMAT_FONT"
+                onchange={handleChange}>
+            </lightning-input-rich-text>
+        </div>
+
+        <div class="slds-var-p-around_small">
+            <lightning-button variant="brand" label="Save" onclick={saveRecord}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

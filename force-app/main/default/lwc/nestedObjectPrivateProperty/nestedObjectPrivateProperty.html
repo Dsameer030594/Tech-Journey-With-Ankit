@@ -1,0 +1,31 @@
+<template>
+    <lightning-card  title="Nested Private Object Property">
+        <p class="slds-var-p-around_small">{myDetails.fname}</p>
+        <p class="slds-var-p-around_small">{myDetails.lname}</p>
+        <p class="slds-var-p-around_small">{myTask}</p>
+       
+        <div class="slds-var-m-top_small slds-var-m-bottom_medium">
+            <lightning-button variant="brand" 
+            label="Change Name" title="Primary action" 
+            onclick={clickHandler} 
+            class="slds-var-m-left_x-small">
+        </lightning-button>
+        </div>
+
+        <div class="slds-var-m-top_small slds-var-m-bottom_medium">
+            <lightning-button variant="brand" 
+            label="Add Task" title="Primary action" 
+            onclick={addTaskHandler} 
+            class="slds-var-m-left_x-small">
+        </lightning-button>
+        </div>
+
+        <div class="slds-var-m-top_small slds-var-m-bottom_medium">
+            <lightning-button variant="brand" 
+            label="Refresh Data" title="Primary action" 
+            onclick={refreshHandler} 
+            class="slds-var-m-left_x-small">
+        </lightning-button>
+        </div>
+    </lightning-card>
+</template>

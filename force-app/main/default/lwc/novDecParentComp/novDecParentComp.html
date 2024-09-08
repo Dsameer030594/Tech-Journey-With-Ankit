@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Parent Component">
+
+        <lightning-input label={parentCompLabel} onchange={handleInput} value={valueFromChild}>
+        
+        </lightning-input>
+
+        <c-nov-dec-child-comp child-comp-label={parentCompLabel} onupdatetask={handleChildEvent}></c-nov-dec-child-comp>
+    </lightning-card>
+</template>

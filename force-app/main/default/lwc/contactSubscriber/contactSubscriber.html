@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Selected Contact - Subscriber">
+
+        <template lwc:if={selectedContact}>
+
+            <div class="slds-var-p-around_small">
+            <img src={selectedContact.PhotoUrl} />
+            <p>{selectedContact.Name}</p>
+            <p>{selectedContact.Title}</p>
+            <p>
+                <lightning-formatted-phone value={selectedContact.Phone}></lightning-formatted-phone>
+            </p>
+            <p>
+                <lightning-formatted-email value={selectedContact.Email}></lightning-formatted-email>
+            </p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

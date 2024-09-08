@@ -1,0 +1,7 @@
+@import "c/cssLibrary";
+
+.btnbg{
+    --slds-c-button-brand-color-background : violet;
+    --slds-c-button-brand-color-background-active : yellow;
+    --slds-c-button-brand-color-background-hover : red;
+}

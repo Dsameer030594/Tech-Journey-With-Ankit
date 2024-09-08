@@ -1,0 +1,115 @@
+<template>
+    <div class="slds-form-element slds-box slds-theme_default">
+        <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-36">{objectLabel}</label>
+        <div class="slds-form-element__control">
+            <div class="slds-combobox_container">
+                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+                    <template if:true={isRecordSelected}>
+                        <!-- Display when value is selected -->
+                        <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right"
+                            role="none">
+                            <span
+                                class="slds-icon_container slds-icon-standard-account slds-combobox__input-entity-icon"
+                                title="Account">
+                                <lightning-icon size="small" icon-name={iconName}></lightning-icon>
+                                <!-- <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account"></use>
+                                </svg> -->
+                                <span class="slds-assistive-text">Account</span>
+                            </span>
+                            <div role="combobox" tabindex="0"
+                                class="slds-input_faux slds-combobox__input slds-combobox__input-value"
+                                aria-labelledby="combobox-label-id-41 combobox-id-5-selected-value"
+                                id="combobox-id-5-selected-value" aria-controls="listbox-id-5" aria-expanded="false"
+                                aria-haspopup="listbox">
+                                <span class="slds-truncate"
+                                    id="combobox-value-id-24">{selectedRecord.selectedName}</span>
+                            </div>
+                            <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+                                title="Remove selected option" onclick={removalSelectionHandler}>
+                                <lightning-icon size="small" icon-name="utility:close"></lightning-icon>
+                                <!-- <svg class="slds-button__icon" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                                </svg> -->
+                                <span class="slds-assistive-text">Remove selected option</span>
+                            </button>
+                        </div>
+                    </template>
+                    <template if:false={isRecordSelected}>
+                        <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"
+                            role="none">
+                            <input type="text" class="slds-input slds-combobox__input slds-has-focus" id="combobox-id-3"
+                                aria-activedescendant="option1" aria-autocomplete="list" aria-controls="listbox-id-3"
+                                aria-expanded="true" aria-haspopup="listbox" role="combobox" placeholder="Search..."
+                                onkeyup={changeHandler} />
+                            <span
+                                class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                                <lightning-icon icon-name="utility:search" size="x-small"></lightning-icon>
+                                <!-- <svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+                                </svg> -->
+                            </span>
+                        </div>
+                    </template>
+                    <template if:true={displayOptions}>
+                        <div id="listbox-id-3" class="slds-dropdown slds-dropdown_length-with-icon-7" role="listbox"
+                            tabindex="0" aria-busy="false">
+                            <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                <template for:each={outputs} for:item="output">
+                                    <li key={output.Id} role="presentation" class="slds-listbox__item"
+                                        onclick={clickHandler} data-item={output.Id}></li>
+                                </template>
+                                <li role="presentation" class="slds-listbox__item">
+                                    <div id="option235"
+                                        class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+                                        role="option">
+                                        <span class="slds-media__figure slds-listbox__option-icon">
+                                            <span class="slds-icon_container slds-icon-standard-account">
+                                                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                                    <use
+                                                        xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account">
+                                                    </use>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                        <span class="slds-media__body">
+                                            <span
+                                                class="slds-listbox__option-text slds-listbox__option-text_entity">Dickenson
+                                                plc</span>
+                                            <span
+                                                class="slds-listbox__option-meta slds-listbox__option-meta_entity">Account
+                                                • Lawrence, KS</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li role="presentation" class="slds-listbox__item">
+                                    <div id="option236"
+                                        class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+                                        role="option">
+                                        <span class="slds-media__figure slds-listbox__option-icon">
+                                            <span class="slds-icon_container slds-icon-standard-account">
+                                                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                                    <use
+                                                        xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account">
+                                                    </use>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                        <span class="slds-media__body">
+                                            <span
+                                                class="slds-listbox__option-text slds-listbox__option-text_entity">Edge
+                                                Communications</span>
+                                            <span
+                                                class="slds-listbox__option-meta slds-listbox__option-meta_entity">Account
+                                                • Austin, TX</span>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
