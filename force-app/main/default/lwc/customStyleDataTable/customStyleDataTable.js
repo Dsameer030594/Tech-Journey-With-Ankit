@@ -3,60 +3,30 @@ import getContactListForDatatable from '@salesforce/apex/ContactsController.getC
 
 const columns = [
     {
-        label: 'Name', type: "customName", typeAttributes: {
-            contactName: {fieldName: "Name"}
-    } },
-    
+        label: 'Name', type: "customName", typeAttributes: { contactName: {fieldName: "Name"} } },
     {
-        label: 'Account Name',
-        fieldName: 'accountLink',
-        type: "url",
-        typeAttributes: {
-            label: {
-                fieldName: "accountName"
-            },
-            target: "_blank"
-        }
-    },
-    
+        label: 'Account Name', fieldName: 'accountLink', type: "url",
+        typeAttributes: { label: {fieldName: "accountName" }, target: "_blank" }
+    },  
     {
-        label: 'Title', fieldName: 'Title', cellAttributes: {
-            class: {
-                fieldName: "titleColor"
-            }   
-        }
+        label: 'Title', fieldName: 'Title', cellAttributes: {class: { fieldName: "titleColor"} }
     },
     
     { label: 'Phone', fieldName: 'Phone', type: 'phone' },
     { label: 'Email', fieldName: 'Email', type: 'email' },
    
     {
-        label: 'Rank',
-        fieldName: 'Rank__c',
-        type: 'customRank',
-        typeAttributes: {
-            RRankIcon: {
-                fieldName: "rankIcon"
-            }
-        }
+        label: 'Rank', fieldName: 'Rank__c', type: 'customRank',
+        typeAttributes: { RRankIcon: {  fieldName: "rankIcon" }  }
     },
-    {
-        label: 'Picture', type: 'customImage',
-        typeAttributes: {
-            pictureUrl: {fieldName: "Picture__c"}
-        },
-        cellAttributes: {
-            alignment: "center"
-        }
+    { label: 'Picture', type: 'customImage',typeAttributes: { pictureUrl: {fieldName: "Picture__c"} },
+        cellAttributes: { alignment: "center" }
     },
 ];
 
-
 export default class CustomStyleDataTable extends LightningElement {
-
     contacts;
      columns = columns;
-
     @wire(getContactListForDatatable) 
     wiredContact({ data, error }) {
         if (data) {

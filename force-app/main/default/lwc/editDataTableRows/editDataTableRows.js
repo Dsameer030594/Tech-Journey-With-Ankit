@@ -107,7 +107,7 @@ export default class EditDataTableRows extends LightningElement {
         let records = event.detail.draftValues;  // array of modified records
 
         let updateRecordsArray = records.map((currItem) => {
-            let fieldInput = { ...currItem };
+            let fieldInput = {...currItem};
             return {
                 fields: fieldInput
             };
