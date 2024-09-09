@@ -3,7 +3,8 @@
 
             <c:childLightningWebComponent 
             aura:id="childlwc"
-            name="Tech Journey With Ankit"></c:childLightningWebComponent>     
+            name="Tech Journey With Ankit"
+            ></c:childLightningWebComponent>     
             
             <p class="slds-var-p-around_small">
                 <lightning:button 
