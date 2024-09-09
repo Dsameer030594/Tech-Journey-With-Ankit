@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Alert Component">
+        <div class="slds-var-p-around_small">
+
+            <lightning-button
+            label="Alert Me"
+            onclick={alertHandler}
+            ></lightning-button>
+        </div>
+
+        <div class="slds-var-p-around_small">
+        
+            <lightning-button 
+            label="Confirm Me" 
+            onclick={confirmHandler}
+            ></lightning-button>
+        </div>
+
+        <div class="slds-var-p-around_small">
+        
+            <lightning-button 
+            label="Prompt Me" 
+            onclick={promptHandler}
+            ></lightning-button>
+        </div>
+
+    </lightning-card>
+</template>
