@@ -11,6 +11,19 @@ public with sharing class AccountHelper {
     ];
    }
 
+   @AuraEnabled(Cacheable=true)
+
+   public static List<Account> getAccountData(){
+
+    Return [
+        SELECT Id, Name, Industry, Rating, Phone
+        FROM Account 
+        WITH USER_MODE 
+    ];
+   }
+
+   
+
     @AuraEnabled(cacheable=true)
     public static List<Account> getAccountDetail(String accId){
        return [
