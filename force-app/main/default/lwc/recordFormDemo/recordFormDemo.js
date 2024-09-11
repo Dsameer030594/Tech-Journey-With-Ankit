@@ -33,7 +33,7 @@ export default class LightningRecordFormDemo extends NavigationMixin(LightningEl
             type: 'standard__recordPage',
             attributes: {
                 recordId: event.detail.id,
-                objectApiName: 'Account',
+                objectApiName: this.objectApiName,
                 actionName: 'view'
             }
         };

@@ -15,29 +15,22 @@ export default class RecordEditFormDemo extends NavigationMixin(LightningElement
         industry: ACCOUNT_INDUSTRY_FIELD,
         slaDate: ACCOUNT_SLAEXPIRATION_DATE_FIELD
     }
-
     successHandler(event) {
         let pageReference = {
             type: 'standard__recordPage',
             attributes: {
-                recordId: event.detail.id,
-                objectApiName: this.objectApiName,
+                recordId: event.detail.id, objectApiName: this.objectApiName,
                 actionName: 'view'
             }
         };
         this[NavigationMixin.Navigate](pageReference);
     }
-
     errorHandler(event) {
         const custevent = new ShowToastEvent({
-            title: 'Error',
-            message: event.detail.message,
-            variant: 'error',
-            mode: 'dismissable'
+            title: 'Error', message: event.detail.message, variant: 'error', mode: 'dismissable'
         });
         this.dispatchEvent(custevent);
     }
-
     submitHandler(event) {
         event.preventDefault();
         const fields = event.detail.fields;
