@@ -32,6 +32,8 @@ export default class RecordEditFormDemo extends NavigationMixin(LightningElement
         this.dispatchEvent(custevent);
     }
     submitHandler(event) {
+        // check if industry is blank. 
+        //if yes Populate the Default industry as Energy
         event.preventDefault();
         const fields = event.detail.fields;
         if (!fields.Industry) {

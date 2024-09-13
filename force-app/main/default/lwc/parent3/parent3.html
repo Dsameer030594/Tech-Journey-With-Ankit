@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="I am Parent 3">
+        <p>If there are 3 components child A and Child B 
+            and they share the same parent 
+            how can we communicate from child A to
+        Child B in the LWC</p>
+
+
+        <c-child-a3 oneventfroma={handleMessageFromA}></c-child-a3>
+        <c-child-b3 message-from-a={handleMessageFromA}></c-child-b3>
+    </lightning-card>
+</template>
